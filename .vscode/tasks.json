@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${workspaceFolder}/src/main.cpp",
+                "-o",
+                "${workspaceFolder}/bin/app.exe",
+                "-I${workspaceFolder}/include", // Include path for your headers
+                "-I/C/msys64/mingw64/include", // Add this line for GLFW
+                "-L${workspaceFolder}/lib", // Library path if needed
+                "-lglfw3",
+                "-lglew32",
+                "-lopengl32"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
